@@ -1,0 +1,100 @@
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+
+<div class="container" style="width:inherit;color:black;">
+	<h1>{{books_by_id.ten_sach}}</h1>
+	<aside class="col-xs-12 col-sm-9 col-md-9 row detail">
+		<img class="col-xs-12 col-sm-4 col-md-4 img-thumbnail anh_bia" src="images/sach/{{books_by_id.hinh}}" class="hinh" />
+		<div class="info col-xs-12 col-sm-5 col-md-5 info">
+			<p class="name">{{books_by_id.ten_sach}}</p>
+			<i><span style="font-size: 20px;">Bìa mềm</span></i>
+			<p>Tác giả: <span>{{books_by_id.ten_tac_gia}}.{{ten_tac_gia}}</span></p>
+			<P>Giá: <span>{{books_by_id.don_gia}}&nbsp;₫</span></p>
+			<div class="rating">
+				<!--<span class="stars-container stars-90">★★★★★</span>-->
+			</div>
+			<form class="form-horizontal" name="form" novalidate>
+				<input style='color:black' class="form-control" type="number" min="1" max="999" ng-init="quantity=1" ng-model="quantity" required/>
+				<button class="btn btn-primary" ng-click="addToCart(books_by_id,quantity)" type="button">
+					<span class="glyphicon glyphicon-shopping-cart"> Mua</span>
+				</button>
+			</form>
+			<form>
+				<a ng-href="{{books_by_id.doc_thu}}">
+					<button type="button" class="btn btn-danger"> Đọc thử <span class="glyphicon glyphicon-arrow-right"></span></button>			
+				</a>				
+			</form>
+		</div>
+		<div class="col-xs-12 col-md-12 col-sm-12 thong_tin_phu">
+			<h4 class="production-title">Giới Thiệu Sách</h4>
+			<div ng-bind-html="books_by_id.gioi_thieu"></div>
+		</div>
+		<div class="col-xs-12 col-md-12 col-sm-12 info_table">
+			<h4 class="table_title">Thông Tin Chi Tiết</h4>
+			<table class="chi_tiet table table-bordered table-striped">
+				<colgroup>
+					<col style="width:25%;"></col>
+					<col></col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>SKU</td>
+						<td>{{books_by_id.sku}}</td>
+					</tr>
+					<tr>
+						<td>Nhà xuất bản</td>
+						<td>{{books_by_id.ten_nha_xuat_ban}}</td>
+					</tr>
+					<tr>
+						<td>Trọng lượng(gam)</td>
+						<td>{{books_by_id.trong_luong}}</td>
+					</tr>
+					<tr>
+						<td>Kích thước</td>
+						<td>{{books_by_id.kich_thuoc}}</td>
+					</tr>
+					<tr>
+						<td>Tác giả</td>
+						<td>{{books_by_id.ten_tac_gia}}</td>
+					</tr>
+					<tr>
+						<td>Ngày xuất bản</td>
+						<td>{{books_by_id.ngay_xuat_ban}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--Bình luận-->
+		<div class="col-xs-12 col-md-12 col-sm-12 comment">
+			<h4>Khách Hàng Nhận Xét</h4>
+			<div class="thumbnail" style="width: 500px;">
+				<form role="form">
+					<div class="form-group">
+						<b>1. Đánh giá của bạn về sản phẩm này: </b>
+						<span><a href="" class="glyphicon glyphicon-star"></a></span>
+						<span><a href="" class="glyphicon glyphicon-star"></a></span>
+						<span><a href="" class="glyphicon glyphicon-star"></a></span>
+						<span><a href="" class="glyphicon glyphicon-star"></a></span>
+						<span><a href="" class="glyphicon glyphicon-star"></a></span>
+
+					</div>
+					<div class="form-group">
+						<label for="tieu_de">2. Viết nhận xét của bạn vào bên dưới:</label>
+						<textarea type="text" placeholder="Nhập nội dung nhận xét tại đây" class="form-control" rows="5" ng-model="noi_dung_nx"></textarea>
+					</div>
+					<button class="btn btn-success text-center" ng-click="submitForm()"><b>Gửi nhận xét</b></button>
+					<br/><br/>
+				</form>
+			</div>
+		</div>
+		<div class="col-xs-8 col-md-8 col-sm-8">
+			<h4>Nhận xét - Đánh giá</h4>
+			<div class="row binh_luan" ng-repeat="ndbl in binh_luan | filter:id">
+				<div style="color:DarkGrey">{{ndbl.ho_ten}} - {{ndbl.tg_binh_luan}}</div>
+				<div>{{ndbl.noi_dung}}</div>
+			</div>
+		</div>
+		<br/><br/>
+	</aside>
+	
+</div>

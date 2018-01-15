@@ -1,0 +1,15 @@
+<!-- Form used for updation of data into database -->
+<form class="form-horizontal alert alert-warning" id="editForm" ng-submit="UpdateInfo(currentUser)" hidden name="form">
+<h3 class="text-center">Cập nhật tác giả</h3>
+	<div class="form-group">
+		<label for="name">Tên tác giả:</label>
+		<input type="text" name="name" class="form-control" ng-model="currentUser.ten_tac_gia" value="{{currentUser.ten_tac_gia}}" required>
+	</div>
+	<div class="form-group">
+		<label for="description">Giới thiệu:</label>
+		<input name="description" type="text" class="form-control" ng-model="currentUser.gioi_thieu" value="{{currentUser.gioi_thieu}}" required>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="form.$invalid" ng-click="updateMsg(currentUser.id)">Update</button>
+	</div>
+</form>

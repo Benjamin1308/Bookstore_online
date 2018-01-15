@@ -1,0 +1,26 @@
+<!-- Form used for updation of data into database -->
+<form class="form-horizontal alert alert-warning" id="editForm" ng-submit="UpdateInfo(currentUser)" hidden name="form">
+<h3 class="text-center">Cập nhật nhà xuất bản</h3>
+	<div class="form-group">
+		<label for="name">Tên nhà xuất bản:</label>
+		<input type="text" name="name" class="form-control" ng-model="currentUser.ten_nha_xuat_ban" value="{{currentUser.ten_nha_xuat_ban}}" required>
+	</div>
+	<div class="form-group">
+		<label for="address">Địa chỉ:</label>
+		<input type="text" class="form-control" ng-model="currentUser.dia_chi" value="{{currentUser.dia_chi}}" required>
+	</div>
+	<div class="form-group">
+		<label for="phone">Điện thoại:</label>
+		<input name="phone" type="text" class="form-control" ng-model="currentUser.dien_thoai" value="{{currentUser.dien_thoai}}" ng-pattern="/^[0-9\-\+][0-9]+$/" required>
+		<span ng-show="form.phone.$dirty && form.phone.$invalid " class="text-danger ">Không phải số điện thoại</span>
+	</div>
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input type="email" name="email" class="form-control" ng-model="currentUser.email" value="{{currentUser.email}}" required>
+		<span ng-show="form.email.$error.email">Không đúng định dạng email</span>
+	</div>
+	
+	<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="form.$invalid" ng-click="updateMsg(currentUser.id)">Update</button>
+	</div>
+</form>

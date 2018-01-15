@@ -1,0 +1,75 @@
+<!-- start sidebar -->
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" >
+</aside>
+<!-- end sidebar -->
+
+<!-- start content -->
+<aside class="col-xs-12 col-sm-9 col-md-9">
+    <!-- Nhúng carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators: khai báo các slide chỉ định khi được click và hiển thị chấm tròn được tô màu -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+
+        <!-- Wrapper for slides: Khai báo các hình ảnh trong các slide -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/slide_banner/File-1440692711.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slide_banner/File-1456730913.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slide_banner/slide_1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slide_banner/slide_2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slide_banner/slide_3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slide_banner/slide_4.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- Left and right controls: tạo nút di chuyển lùi, tới -->
+        <a class="left carousel-control" href="/#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="/#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- hết carousel -->
+
+    <div class="tieude"><span class="glyphicon glyphicon-book"></span> DANH SÁCH </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-6 text-center" dir-paginate="book in books | itemsPerPage: 12">
+            <div class="thumbnail sach">
+                <a href="chi-tiet/{{book.id}}" ng-click="getBookbyId(book.id)"><img src="images/sach/{{book.hinh}}" /></a>
+                <div class="caption">
+                    <h5 class="text-center"><a href="chi-tiet/{{book.id}}" ng-click="getBookbyId(book.id)">{{book.ten_sach}}</a></h5>
+                    <h5 class="text-center price">Giá bìa: {{book.gia_bia}}</h5>
+                </div>
+                <!--<button type="submit" ng-click="addToCart(book)" class="btn btn-primary" ng-controller="GiohangCtrl">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>-->
+
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</aside>
+<!-- end content -->

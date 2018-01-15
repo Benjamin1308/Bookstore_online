@@ -1,0 +1,74 @@
+<div class="container" style="width:inherit;color:black;">
+	<h1>{{title}}</h1>
+	<button class="btn btn-primary" ng-click="xu_ly_tt()">Thêm tin tức</button>
+	<br>
+
+	<form class="form-horizontal" id="form_tt" ng-submit="them_tt(form)" hidden>
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">Tiêu đề tin</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="form.tieu_de_tin" class="form-control">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Nội dung tóm tắt</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" ng-model="form.noi_dung_tom_tat"></textarea>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Nội dung chi tiết</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" ng-model="form.noi_dung_chi_tiet"></textarea>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Hình đại diện</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" ng-model="form.hinh_dai_dien"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" value="submit" class="btn btn-primary">Thêm</button>
+			</div>
+		</div>
+	</form>
+
+	<div ng-include src="'widgets/editForm_tt.html'"></div>
+
+	<br>
+	<input type="search" ng-model="query" placeholder="Search" class="form-control">
+	<br>
+	<table class="table table-responsive">
+	 	<thead>
+			<tr>
+				<th>Tiêu đề tin</th>
+				<th>Nội dung tóm tắt</th>
+				<!--<th>Nội dung chi tiết</th>-->
+                <th>Hình đại diện</th>
+				<th>Edit</th>
+				<th>Remove</th>
+	 		</tr>
+		 </thead>
+	 	<tbody>
+			 <!--<tr ng-repeat="new in news | filter: query track by $index">-->
+			 <tr dir-paginate="new in news | itemsPerPage: 5 | filter: query track by $index">
+				<td ng-bind="new.tieu_de_tin"> </td>
+                <td ng-bind="new.noi_dung_tom_tat"> </td>
+                <!--<td>
+                    <div class="cuon" ng-bind-html="new.noi_dung_chi_tiet" >
+
+                    </div>
+                </td>-->
+                <td ng-bind="new.hinh_dai_dien"> </td>
+				<td><button class="btn btn-success" ng-click="edit_tt(new)">v</button></td>
+				<td><button class="btn btn-danger" ng-click="xoa_tt(new.id)">x</button></td>
+			</tr>
+		 </tbody>
+	</table>
+	
+	<div>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

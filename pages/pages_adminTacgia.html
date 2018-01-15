@@ -1,0 +1,57 @@
+<div class="container" style="width:inherit;color:black;">
+
+	<h1>{{ title }}</h1>
+	
+	<button class="btn btn-primary" ng-click="frmToggle()">Thêm tác giả</button>
+	<br>
+
+	<form name="form" class="form-horizontal" id="blogForm" ng-submit="pushData(frm)" hidden>
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Tên tác giả</label>
+			<div class="col-sm-10">
+				<input name="name" type="text" ng-model="frm.ten_tac_gia" class="form-control" required>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Giới thiệu</label>
+			<div class="col-sm-10">
+				<input name="description" class="form-control" ng-model="frm.gioi_thieu" required></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" value="submit" class="btn btn-primary" ng-disabled="form.$invalid">Thêm</button>
+			</div>
+		</div>
+	</form>
+
+	<div ng-include src="'widgets/editTacgiaForm.html'"></div>
+
+	<br>
+	<input type="search" ng-model="query" placeholder="Tìm tác giả" class="form-control">
+	<br>
+	<table class="table table-responsive">
+	 	<thead>
+			<tr>
+				<th>Tên tác giả</th>
+				<th>Giới thiệu</th>
+				<th>Edit</th>
+				<th>Remove</th>
+	 		</tr>
+		 </thead>
+	 	<tbody>
+			 <!--<tr ng-repeat="author in authors | filter: query track by $index">-->
+		     <tr dir-paginate="author in authors | itemsPerPage: 5 | filter: query track by $index">
+				<td>{{ author.ten_tac_gia }}</td>
+				<td ng-bind-html="author.gioi_thieu"></td>
+				<td><button class="btn btn-success" ng-click="editData(author)">v</button></td>
+				<td><button class="btn btn-danger" ng-click="removeData(author.id)">x</button></td>
+			</tr>
+		 </tbody>
+	</table>
+
+	<div>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+	
+</div>

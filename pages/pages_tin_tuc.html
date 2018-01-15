@@ -1,0 +1,28 @@
+<!-- start sidebar -->
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+<!-- end sidebar -->
+
+<!--<div class="tieude" > TIN TỨC </div>-->
+<!--<div class="row">-->
+    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-md-8 col-sm-8 col-xs-8">
+        <div class="tieu_de" style='color:black;font-weight:bold;'>TIN TỨC SÁCH </div>
+        <div class="row thumbnail tin_tuc" dir-paginate="new in news | itemsPerPage: 5" ng-class-odd="'odd'">
+            <div class="col-md-3 col-sm-6 col-xs-12 hinh_tin_tuc">
+                <a href="./tin-tuc/{{new.id}}"><img src="images/tin_tuc/{{new.hinh_dai_dien}}" alt="" style="height: 200px; width:150px"></a>
+            </div>
+            <div class="col-md-9 col-sm-6 col-xs-12">
+                <a href="./tin-tuc/{{new.id}}"><div style='color:black'><b>{{new.tieu_de_tin}}</b></div></a>
+                <div style='color:black' ng-bind-html="new.noi_dung_tom_tat"></div>
+                <br/><br/>
+                <div class="xem_tiep" style='text-align:right;font-weight:bold;'><span class="glyphicon glyphicon-arrow-right"></span><a href="./tin-tuc/{{new.id}}"> Xem tiếp</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+    <div>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+<!--</div>-->

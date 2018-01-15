@@ -1,0 +1,75 @@
+<!-- start sidebar -->
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+<!-- end sidebar -->
+
+<aside class="col-xs-12 col-sm-9 col-md-9">
+    <form class="form-horizontal sign_up" name="form" ng-submit="dat_hang(form)" novalidate>
+        <div class="form-group">
+            <div ng-show="success" class="text-success text-center">Đặt hàng thành công !</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="fullname" class="col-xs-3 control-label required">Họ và tên người nhận*</label>
+            <div class="col-xs-9">
+                <input name="fullname" type="text" class="form-control" ng-model="fullname" ng-maxlength="50" required>
+                <i class="fa fa-check text-success" ng-show="form.fullname.$dirty && form.fullname.$valid"></i>
+                <div ng-show="form.fullname.$dirty && form.fullname.$invalid" class="text-danger"><i class="fa fa-times text-danger"></i>
+                    <span ng-show="form.fullname.$error.required">Họ tên không được bỏ trống</span>
+                    <span ng-show="form.fullname.$error.maxlength">Họ tên phải ngắn hơn 50 kí tự</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-xs-3 control-label required">Email người nhận*</label>
+            <div class="col-xs-9">
+                <input name="email" type="email" class="form-control" ng-model="email" autocomplete="off" required>
+                <i class="fa fa-check text-success" ng-show="form.email.$dirty && form.email.$valid"></i>
+                <div ng-show="form.email.$dirty && form.email.$invalid" class="text-danger"><i class="fa fa-times text-danger"></i>
+                    <span ng-show="form.email.$error.required">Bạn chưa nhập địa chỉ email</span>
+                    <span ng-show="form.email.$error.email">Không đúng định dạng email</span>
+                </div>
+            </div>
+        </div>
+    
+        
+        <div class="form-group ">
+            <label for="phone " class="col-xs-3 control-label required ">Số điện thoại*</label>
+            <div class="col-xs-9 ">
+                <input name="phone " ng-model="phone " type="text " ng-pattern="/^[0-9]+$/ " class="form-control " required>
+                <i class="fa fa-check text-success " ng-show="form.phone.$dirty && form.phone.$valid "></i>
+                <div ng-show="form.phone.$dirty && form.phone.$invalid " class="text-danger "><i class="fa fa-times
+            text-danger "></i>
+                    <span ng-show="form.phone.$error.required ">Số điện thoại không được bỏ trống</span>
+                </div>
+            </div>
+        </div>
+        
+        <!--<div class="form-group">
+            <label for="birthday" class="col-xs-3 control-label required ">Ngày sinh*</label>
+            <div class="col-xs-9 ">
+                <input name="birthday " ng-model="birthday " type="text " class="form-control " required>
+                <i class="fa fa-check text-success " ng-show="form.birthday.$dirty && form.birthday.$valid ""></i>
+                <div ng-show="form.birthday.$dirty && form.birthday.$invalid" class="text-danger"><i class="fa fa-times text-danger"></i>
+                    <span ng-show="form.birthday.$error.required">Ngày sinh không được bỏ trống</span>
+                </div>
+            </div>
+        </div>-->
+        
+        <div class="form-group">
+            <label for="address" class="col-xs-3 control-label required">Địa chỉ người nhận</label>
+            <div class="col-xs-9">
+                <textarea rows="3" name="address" ng-model="address" type="" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-xs-9">
+                <button type="submit" class="btn btn-success" ng-disabled="!form.$dirty || (form.$dirty && form.$invalid)">Đặt hàng <i class="fa fa-sign-in"></i></button>
+            </div>
+        </div>
+        
+    </form>
+</aside>
+<!-- end content -->

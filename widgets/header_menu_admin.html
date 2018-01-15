@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row menuContainer">
+        <div class="col-sm-12">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+                <a class="navbar-brand" href=""></a>
+            </div>
+            <nav class="navbar navbar-inverse menu" data-spy="affix" data-offset-top="80" style="z-index: 1000">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>                        
+									</button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav sm">
+                            <li class="active trans"><a href="./">Trang chủ</a></li>
+                            <li><a href="./admin/sach" class="trans">Sách</a></li>
+                            <li><a href="./admin/tac-gia" class="trans">Tác giả</a></li>
+                            <li><a href="./admin/nxb" class="trans">Nhà xuất bản</a></li>
+                            <li><a href="./admin/tin-tuc" class="trans">Tin tức</a></li>
+                            
+                        </ul>
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--<li><a href="./admin" class="trans"> Admin</a></li>-->
+                            <li ng-controller="SessionCtrl">
+                                <a href="#" class="trans" ng-if="thong_tin_login.tai_khoan"><span class="glyphicon glyphicon-user "></span>{{thong_tin_login.tai_khoan}}</a>
+                                <a href="dang-nhap" class="trans" ng-if="thong_tin_login.tai_khoan==null"><span class="glyphicon glyphicon-user "></span>Đăng nhập</a>
+                            </li>
+
+                            <li ng-controller="SessionCtrl"><a href="#" class="trans" ng-click="logout()" ng-if="thong_tin_login.tai_khoan"><span class="glyphicon glyphicon-user "></span>Đăng xuất</a></li>
+                            <li><a href="dang-ky" class="trans"><span class="glyphicon glyphicon-log-in"></span> Đăng ký</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container" style="width:inherit;color:black;">
+
+	<h1>{{ title }}</h1>
+	
+	<button class="btn btn-primary" ng-click="frmToggle()">Thêm sách</button>
+	<br>
+
+	<form class="form-horizontal" id="blogForm" ng-submit="pushData(frm)" hidden>
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">Tên sách</label>
+			<div class="col-sm-10">
+				<input type="text" ng-model="frm.ten_sach" class="form-control">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="description" class="col-sm-2 control-label">Số trang</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" ng-model="frm.so_trang"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" value="submit" class="btn btn-primary">Thêm</button>
+			</div>
+		</div>
+	</form>
+
+	<div ng-include src="'widgets/editForm.html'"></div>
+
+	<br>
+	<input type="search" ng-model="query" placeholder="Tìm sách" class="form-control">
+	<br>
+	<table class="table table-responsive">
+	 	<thead>
+			<tr>
+				<th>Tên sách</th>
+				<th>Trọng lượng</th>
+				<th>Đơn giá</th>
+				<th>Edit</th>
+				<th>Remove</th>
+	 		</tr>
+		 </thead>
+	 	<tbody>
+			 <tr ng-repeat="book in books | filter: query track by $index">
+				<td>{{ book.ten_sach }}</td>
+				<td>{{ book.trong_luong }}</td>
+				<td>{{ book.don_gia }}</td>
+				<td><button class="btn btn-success" ng-click="editData(book)">v</button></td>
+				<td><button class="btn btn-danger" ng-click="removeData(book.id)">x</button></td>
+			</tr>
+		 </tbody>
+	</table>
+
+</div>

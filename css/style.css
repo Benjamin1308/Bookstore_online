@@ -1,0 +1,119 @@
+/*1. Các định dạng chung */
+body {
+	background: #616161;
+	color: #fff;
+}
+/*2. Header */
+.header{
+    background-color: #fff;
+}
+.logo {
+    height:150px; 
+}
+.hinh_logo{
+    float:left;
+    margin-top: 10px;
+}
+.ten_shop{  
+    float:left;
+    color: black;
+    text-shadow: 3px 3px 3px #b9a698;
+    margin-top: 30px;
+}
+.search{
+    margin-top:50px;
+}
+.gio_hang{
+    margin-top: 50px;
+}
+/*2. Menu chính */
+.navbar-inverse .navbar-brand {
+  color:#ffe5e5; 
+}
+.navbar-inverse .navbar-nav > li > a 
+{
+  color: #FFFFFF;
+}
+.nav li a{
+    display: block;
+}
+.menuContainer{
+	background-color:#ffffff;
+}
+a {
+  color:#009900;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+    color:#009900;
+    text-decoration: none;
+}
+.menu {
+    left: 0px;
+	background:linear-gradient(#009900,#00cc00);  
+}
+.mainContainer {
+    background-color: #FFFFFF;
+}
+/*3. Side bar*/
+.bar_title{    
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding:10px 0px 0px 20px;
+    background: linear-gradient(#00cc00, #009900);    
+}
+.subsidebar {
+   padding-bottom: 10px;
+}   
+.subsidecontent{
+	margin:0px; padding-top: 0px; 
+}   
+.subsidecontent ul li a {
+    color: black;
+}
+/*4. content*/
+#content {          
+    float: left;    
+    width: 550px; 
+}
+.tieude {
+    margin-top: 10px; padding-left:20px; padding-top:5px;
+    background-color:#00cc00; 
+    height:30px;
+    color: white; font-weight: bold; font-size: 14px;
+} 
+.sach{
+    height: 300px;
+}
+/* 5. Footer */
+#footer {
+    height: 70px;
+    padding: 0 20px;
+    background-color:#FFFFFF;
+    border-top:1px solid #009900;    
+}
+
+/*Bổ sung transition*/
+ .trans {
+    transition: all 1s;
+}
+.transleft {
+    transition: all 1s;
+}
+.trans:hover {
+    letter-spacing: .2em;
+    transition: 1s letter-spacing;
+}
+.transClick{
+    letter-spacing: .2em;
+}
+.transleft:hover{
+    padding-left: 40px;
+    letter-spacing: .2em;
+    transition:1s all;
+}
+.binh_luan{
+    padding: 10px 40px 10px 40px;
+}

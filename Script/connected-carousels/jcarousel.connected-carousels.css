@@ -1,0 +1,121 @@
+.connected-carousels
+{
+     width: 320px; margin-bottom: 0px; float: left;  /* thêm float*/
+}
+.connected-carousels .stage {
+	margin-left: 0px; width: 320px; position: relative;   /*Sửa độ rộng, margin-left*/
+}
+.connected-carousels .photo-credits {
+	right: 15px; bottom: 0px; color: rgb(255, 255, 255); font-size: 13px; position: absolute; opacity: 0.66; text-shadow: 0px 0px 1px rgba(0,0,0,0.85);
+}
+.connected-carousels .photo-credits a {
+	color: rgb(255, 255, 255);
+}
+.connected-carousels .navigation {
+	margin: 20px; width: 260px; position: relative; /*margin*/
+}
+.connected-carousels .carousel {
+	overflow: hidden; position: relative;
+}
+.connected-carousels .carousel ul {
+	list-style: none; margin: 0px; padding: 0px; width: 20000em; position: relative;
+}
+.connected-carousels .carousel li {
+	float: left;
+}
+.connected-carousels .carousel-stage {
+	border-radius: 5px; border: 10px solid rgb(255, 255, 255);
+	height: 400px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-box-shadow: 0 0 2px #999;
+	-moz-box-shadow: 0 0 2px #999;
+	-ms-box-shadow: 0 0 2px #999;
+	 box-shadow: 0px 0px 2px #999;
+}
+/* Bổ sung thêm cho hình*/
+.connected-carousels .stage img{
+    width: 300px; height: 400px;    
+}
+/* Bổ sung thêm cho hình*/
+.connected-carousels .navigation img{
+    width: 50px; height: 60px;    
+}
+
+/* hết */
+.connected-carousels .carousel-navigation {
+	background: rgb(255, 255, 255); border-radius: 5px; 
+	border: 10px solid rgb(255, 255, 255); width: 240px; height: 70px; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-box-shadow: 0 0 2px #999;
+	-moz-box-shadow: 0 0 2px #999;
+	-ms-box-shadow: 0 0 2px #999;
+    box-shadow: 0px 0px 2px #999;
+
+}
+.connected-carousels .carousel-navigation li {
+	cursor: pointer;
+}
+.connected-carousels .carousel-navigation li img {
+	border: 5px solid rgb(255, 255, 255); display: block;
+}
+.connected-carousels .carousel-navigation li.active img {
+	border-color: rgb(204, 204, 204);
+}
+.connected-carousels .prev-stage {
+	top: 0px; width: 305px; height: 410px; color: rgb(255, 255, 255); display: block; position: absolute;
+}
+.connected-carousels .next-stage {
+	top: 0px; width: 305px; height: 410px; color: rgb(255, 255, 255); display: block; position: absolute;
+}
+.connected-carousels .prev-stage {
+	left: 0px;
+}
+.connected-carousels .next-stage {
+	right: 0px;
+}
+.connected-carousels .inactive.prev-stage {
+	display: none;
+}
+.connected-carousels .inactive.next-stage {
+	display: none;
+}
+.connected-carousels .prev-stage span {
+	background: rgb(78, 68, 60); font: 24px/27px Arial, sans-serif; border-radius: 30px; top: 50%; width: 30px; height: 30px; text-align: center; color: rgb(255, 255, 255); text-decoration: none; display: none; position: absolute; font-size-adjust: none; font-stretch: normal; box-shadow: 0px 0px 2px #999; text-shadow: 0px 0px 1px #000; -webkit-border-radius: 30px; -moz-border-radius: 30px; -webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999;
+}
+.connected-carousels .next-stage span {
+	background: rgb(78, 68, 60); font: 24px/27px Arial, sans-serif; border-radius: 30px; top: 50%; width: 30px; height: 30px; text-align: center; color: rgb(255, 255, 255); text-decoration: none; display: none; position: absolute; font-size-adjust: none; font-stretch: normal; box-shadow: 0px 0px 2px #999; text-shadow: 0px 0px 1px #000; -webkit-border-radius: 30px; -moz-border-radius: 30px; -webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999;
+}
+.connected-carousels .prev-stage span {
+	left: 20px;
+}
+.connected-carousels .next-stage span {
+	right: 20px;
+}
+.connected-carousels .prev-stage:hover span {
+	display: block;
+}
+.connected-carousels .next-stage:hover span {
+	display: block;
+}
+.connected-carousels .prev-navigation {
+	background: rgb(78, 68, 60); font: 16px/29px Arial, sans-serif; border-radius: 30px; width: 30px; height: 30px; color: rgb(255, 255, 255); text-decoration: none; display: block; position: absolute; font-size-adjust: none; font-stretch: normal; box-shadow: 0px 0px 2px #999; text-shadow: 0px 0px 1px #000; -webkit-border-radius: 30px; -moz-border-radius: 30px; -webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999;
+}
+.connected-carousels .next-navigation {
+	background: rgb(78, 68, 60); font: 16px/29px Arial, sans-serif; border-radius: 30px; width: 30px; height: 30px; color: rgb(255, 255, 255); text-decoration: none; display: block; position: absolute; font-size-adjust: none; font-stretch: normal; box-shadow: 0px 0px 2px #999; text-shadow: 0px 0px 1px #000; -webkit-border-radius: 30px; -moz-border-radius: 30px; -webkit-box-shadow: 0 0 2px #999; -moz-box-shadow: 0 0 2px #999;
+}
+.connected-carousels .prev-navigation {
+	left: -15px; top: 22px; text-indent: 6px;
+}
+.connected-carousels .next-navigation {
+	top: 22px; right: -15px; text-indent: 20px;
+}
+.connected-carousels .inactive.prev-navigation {
+	cursor: default; opacity: 0.5;
+}
+.connected-carousels .inactive.next-navigation {
+	cursor: default; opacity: 0.5;
+}

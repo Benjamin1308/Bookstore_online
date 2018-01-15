@@ -1,0 +1,12 @@
+<!-- start sidebar -->
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+<!-- end sidebar -->
+
+<div class="col-md-2 col-sm-2 col-xs-2"></div>
+<div class="col-md-8 col-sm-8 col-xs-8" style='color:black'>
+    <div style="color:#003300; font-weight:bold">{{chi_tiet_tin.tieu_de_tin}}</div><br/>
+    <div style="font-size:13px; font-weight:bold;color:#808080;">{{chi_tiet_tin.noi_dung_tom_tat}}</div><br/>
+    <div ng-bind-html="chi_tiet_tin.noi_dung_chi_tiet"></div>
+</div>
+<div class="col-md-2 col-sm-2 col-xs-2"></div>

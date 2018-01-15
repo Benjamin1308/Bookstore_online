@@ -1,0 +1,11 @@
+
+    <div class="bar_title" >Danh mục sách</div>
+    <div class="subsidebar">							
+        <div class="subsidecontent">                
+            <table class="table">
+                <tr  class="success" ng-repeat="loai_sach in ds_loai_sach | filter: query track by $index">
+                    <td class="transleft"><a href="loai-sach/{{loai_sach.id}}">{{ loai_sach.ten_loai_sach }}</a></td>                   
+                </tr>
+            </table>
+        </div>
+    </div>

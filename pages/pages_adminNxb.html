@@ -1,0 +1,75 @@
+<div class="container" style="width:inherit;color:black;">
+
+	<h1>{{ title }}</h1>
+	
+	<button class="btn btn-primary" ng-click="frmToggle()">Thêm nhà xuất bản</button>
+	<br>
+
+	<form name="form" class="form-horizontal" id="blogForm" ng-submit="pushData(frm)" hidden>
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Tên nhà xuất bản</label>
+			<div class="col-sm-10">
+				<input name="name" type="text" ng-model="frm.ten_nxb" class="form-control" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="address" class="col-sm-2 control-label">Địa chỉ</label>
+			<div class="col-sm-10">
+				<input name="address" class="form-control" ng-model="frm.dia_chi" required></input>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="phone" class="col-sm-2 control-label" >Điện thoại</label>
+			<div class="col-sm-10">
+				<input name="phone" class="form-control" ng-model="frm.dien_thoai" ng-pattern="/^[0-9\-\+][0-9]+$/" required></input>
+				<span ng-show="form.phone.$dirty && form.phone.$invalid " class="text-danger ">Không phải số điện thoại</span>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="email" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<input name="email" type="email" class="form-control" ng-model="frm.email" required></input>
+				<span ng-show="form.email.$error.email">Không đúng định dạng email</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" ng-disabled="form.$invalid" value="submit" class="btn btn-primary">Thêm</button>
+			</div>
+		</div>
+	</form>
+
+	<div ng-include src="'widgets/editNxbForm.html'"></div>
+
+	<br>
+	<input type="search" ng-model="query" placeholder="Tìm nxb" class="form-control">
+	<br>
+	<table class="table table-responsive">
+	 	<thead>
+			<tr>
+				<th>Tên nhà xuất bản</th>
+				<th>Địa chỉ</th>
+				<th>Điện thoại</th>
+                <th>Email</th>
+				<th>Edit</th>
+				<th>Remove</th>
+	 		</tr>
+		 </thead>
+	 	<tbody>
+			 <!--<tr ng-repeat="nxb in nxbs | filter: query track by $index">-->
+			 <tr dir-paginate="nxb in nxbs | itemsPerPage: 5 | filter: query track by $index">
+				<td>{{ nxb.ten_nha_xuat_ban }}</td>
+				<td>{{ nxb.dia_chi }}</td>
+				<td>{{ nxb.dien_thoai }}</td>
+                <td>{{ nxb.email }}</td>
+				<td><button class="btn btn-success" ng-click="editData(nxb)">v</button></td>
+				<td><button class="btn btn-danger" ng-click="removeData(nxb.id)">x</button></td>
+			</tr>
+		 </tbody>
+	</table>
+
+	<div>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+
+</div>

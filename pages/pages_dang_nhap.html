@@ -1,0 +1,27 @@
+<!-- start sidebar -->
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+<!-- end sidebar -->
+
+<!-- start content -->
+<aside class="col-xs-12 col-sm-9 col-md-9 sign_up" ng-controller="LoginCtrl">
+    <!--<div class="container">-->
+    <form class="form-horizontal" role="form" ng-submit="login()">
+        <h2>Đăng nhập</h2>
+        <div class="form-group">
+            <label for="username" class="control-label sr-only col-sm-4">Tên đăng nhập</label>
+            <div class="col-sm-4">
+                <input type="text" id="username" class="form-control" ng-model="username" placeholder="Tên đăng nhập">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="control-label sr-only col-sm-4">Mật khẩu</label>
+            <div class="col-sm-4">
+                <input type="password" id="password" class="form-control" ng-model="password" placeholder="Mật khẩu">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+    </form>
+    <!--</div>-->
+</aside>
+<!-- end content -->

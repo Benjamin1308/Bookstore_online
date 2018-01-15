@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-sm-6 col-xs-12 logo">
+        <!--<div class="hinh_logo"><img src="images/logo.png" alt=""/></div>
+                        <div class="ten_shop"><h1>Book Store Online</h1></div>-->
+        <div class="hinh_logo"><img class="img-responsive" src="images/Capture_1.png" alt="" /></div>
+    </div>
+    <div class="col-sm-4 search">
+        <div class="row  hidden-sm hidden-xs">
+            <div class="col-sm-12 ">
+                <form action="" class="search-form" method="GET">
+                    <div class="input-group">
+                        <input class="form-control search-control" placeholder="Tìm kiếm sách...">
+                        <div class="input-group-btn">
+                            <button class="btn btn-success" type="submit">
+                                            <span class="glyphicon glyphicon-search"></span>											
+                                        </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2  hidden-sm hidden-xs gio_hang">
+        <a  ng-controller="GiohangCtrl" ng-click="showCart()" href="./gio-hang"><button class="btn btn-success" type="submit" >
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        Giỏ hàng
+                    </button></a>
+        <!--<a ng-controller="GiohangCtrl" href="./gio-hang" class="btn btn-danger">Checkout <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>-->
+    </div>
+</div>

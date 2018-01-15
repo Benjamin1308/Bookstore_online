@@ -1,0 +1,56 @@
+<aside class="col-xs-12 col-sm-3 col-md-3" ng-include="'widgets/menu_danh_muc_sach.html'" ng-controller="BookCtrl">
+</aside>
+
+
+<aside class="col-xs-12 col-sm-9 col-md-9" style='color:black'>
+    <h4>
+        GIỎ HÀNG CỦA BẠN
+    </h4>
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th style="text-align:center">Tên sách</th>
+            <!--<th style="width: 100%;">Name</th>-->
+            <th style="text-align:center;width: 150px">Đơn giá</th>
+            <th style="text-align:center;width: 150px">Số lượng</th>
+            <th style="text-align:center;width: 150px">Thành tiền</th>
+            <th style="text-align:center;width: 150px"></th>
+
+        </tr>
+
+        <tr ng-repeat="p in gio_hang">
+            <td>{{ p.product_name }}</td>
+            <!--<td>{{ p.name }}</td>-->
+            <td class="text-right">{{ p.don_gia }} VNĐ</td>
+            
+            <!--<td><input class="form-control" type="number" min="1" max="999" value="1" ng-model="p.quantity"/></td>-->
+            
+            <td class="text-center">{{ p.quantity }}</td>
+
+            <td class="text-right">{{ p.don_gia * p.quantity }} VNĐ</td>
+            
+            <td class="text-center">
+                <button ng-click="remove(p.product_id)" class="btn btn-sm btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-right" style="font-weight: bold" colspan="4">Tổng cộng :</td>
+            <td class="text-right">{{ tong_tien }} VNĐ</td>
+            
+        </tr>
+        <tr>
+            <td class="text-right" colspan="4">
+            <button class="btn btn-primary" type="button">
+                <a style="color:white;" href="./">Tiếp tục mua hàng</a>
+            </button>
+            </td>
+            <td>
+            <button class="btn btn-primary" type="button">
+                <a style="color:white;" href="./dat-hang">Đặt hàng</a>
+            </button>
+            </td>
+        </tr>
+    </table>
+</aside>
